@@ -18,9 +18,26 @@ export class JewelryController {
   }
 
   @Get(':material/:fineness/:size')
-  async fullQuery(@Param('material') material: string,
-                  @Param('fineness') fineness: string,
-                  @Param('size') size: string): Promise<Jewelry[]> {
+  async query(@Param('material') material: string,
+              @Param('fineness') fineness: string,
+              @Param('size') size: string): Promise<Jewelry[]> {
+
+    if(fineness === 'fineness') {
+
+      if(size === 'size') { return await this.jewelryService.materialQuery(material); }
+      if(material === 'material') { return await this.jewelryService.sizeQuery(size); }
+      return await this.jewelryService.materialSizeQuery(material, size);
+    } else if(material === 'material') {
+
+      if(size === 'size') { return await this.jewelryService.finenessQuery(fineness); }
+      if(fineness === 'fineness') { return await this.jewelryService.sizeQuery(size); }
+      return await this.jewelryService.finenessSizeQuery(fineness, size);
+    } else if(size === 'size') {
+
+      if(fineness === 'fineness') { return await this.jewelryService.materialQuery(material); }
+      if(material === 'material') { return await this.jewelryService.finenessQuery(fineness); }
+      return await this.jewelryService.materialFinenessQuery(fineness, material);
+    }
 
     return await this.jewelryService.fullQuery(material, fineness, size);
   }
