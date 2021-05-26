@@ -8,8 +8,8 @@ export class Jewelry {
     @Column('text')
     provider: string;
 
-    @Column('int')
-    invoice: number;
+    @Column('text')
+    invoice: string;
 
     @Column('text')
     product: string;

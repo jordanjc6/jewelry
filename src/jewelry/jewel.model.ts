@@ -1,7 +1,7 @@
 export interface Jewel {
     identity?: number;
     provider: string;
-    invoice: number;
+    invoice: string;
     product: string;
     sku: string,
     unitprice: number,
