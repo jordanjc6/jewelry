@@ -8,11 +8,11 @@ import { join } from 'path';
 @Module({
   imports: [TypeOrmModule.forRoot({
     type: 'postgres',
-    host: 'localhost',
+    host: 'ec2-184-73-198-174.compute-1.amazonaws.com',
     port: 5432,
-    username: 'postgres',
-    password: 'Jmilli0n!',
-    database: 'mcjewelry',
+    username: 'kyxchwnubzztkw',
+    password: '3debcefe3a17b1cc886b8a53ed4f38d0581dd8140b984b1168fb5d2f03d21dd6',
+    database: 'd3nfjc2luf98tf',
     entities: [Jewelry],
     synchronize: true,
     }), JewelryModule,
