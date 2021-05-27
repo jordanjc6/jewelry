@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" type="text/css" href = "./Styling.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <title>Marilyn's Creations - Inventory</title>
+</head>
+<body>
+
+<section class = "title"> 
+    <div class ="titlepage">
+        <h1>Marilyn's Creations - Inventory</h1>
+    </div>
+</section>
+
+<section class = "dropDown">
+    <h1>Item</h1>
+    <div class = "item item-1">
+        <div class = "input-container">
+            <input id="inputField-1" type="text" value="" placeholder="material">
+        </div>
+        <div class = "input-container"> 
+            <input id="inputField-2" type="text" value="" placeholder="fineness (karats)">
+        </div>
+        <div class = "input-container">
+            <input id="inputField-3" type="text" value="" placeholder="size (mm)">
+        </div>
+   </div>
+
+    <div class = "searchContainer">
+        <button id="searchItem" onclick="search()">Search</button>
+    </div>
+
+   <div id="search_results"></div>
+    <div class = "item item-2">
+        <h1>Quantity</h1>
+        <input id="inputFieldSecond" type="number" value=1 placeholder = "I.e. 5 beads" onchange="recalculate()">
+    </div>
+    <div class = "cost">
+        <input id = "theCost" type="number" readonly></input>
+    </div>
+</section>
+
+<div class = "buttonContainer">
+    <button id="addToCalc" onclick="addProduct()">Add to Calculation</button>
+</div>
+
+<!-- This is where the array is being held-->
+<section class = "TheCalc">
+    <div class = "product-container">
+        <div class="product" id="toCalcContainer"></div>
+        <div class="product" id="deleteContainer"></div>
+    </div>
+</section>
+
+
+<!-- This is where the total calculation is being held-->
+
+<section class = "totalCost-container">
+    <button id="totalCostCalc">Calculate</button>
+</section>
+<div class = "totalOutput-container">
+    <input id ="output" type="number" readonly></input>
+</div>
+<script src = "./Inventory.js"></script>
+
+</body>
+</html>

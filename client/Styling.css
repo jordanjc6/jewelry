@@ -1,0 +1,200 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Rokkitt', serif;
+}
+body {
+    line-height: 1.3;
+    background-attachment: fixed;
+    background-color: white;
+    color: black;
+    font-family: 'Rokkitt', serif;
+    height: 100vh;
+}
+.titlepage {
+    text-align: center;
+    font-size: 3em;
+}
+.dropDown {
+    margin-top: 20px;
+    margin: 3em;
+}
+.item {
+    margin: 0em;
+    margin-top: 3em;
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+}
+.item-1{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+#inputField-1, #inputField-2, #inputField-3 {
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+}
+.input-container {
+    border: 1px solid #9A9A9A;
+    border-radius: 40px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 1em;
+    margin-top: 10px;
+}
+.icon-Search {
+    display: 'inline-block';
+    float: right;
+    border: 1px solid #9A9A9A;
+    padding: 10px;
+    border-radius: 50%;
+}
+#inputFieldSecond{
+    margin-top: 15px;
+    padding: 5px;
+    border: 1px solid #9A9A9A;
+    border-radius: 40px;
+    color: black;
+    padding: 10px;
+    font-size: 16px;
+}
+.cost {
+    margin: 3em;
+    display: flex;
+    justify-content: center;
+}
+#theCost {
+    border: 1px solid #9A9A9A;
+    color: black; 
+    padding: 15px;
+    font-size: 18px;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+#addToCalc {
+    background-color: white;
+    color: black;
+    border: 1px solid #9A9A9A;
+    padding: 10px 25px;
+    font-size: 18px;
+    border-radius: 40px;
+}
+.searchContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    width: 30%;
+}
+#searchItem {
+    background-color: white;
+    color: black;
+    border: 1px solid #9A9A9A;
+    padding: 16px 60px;
+    font-size: 18px;
+    border-radius: 40px;
+}
+
+.TheCalc {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.product-container {
+    margin: 3em;
+    display: flex;
+    flex-direction: column;
+
+    margin: 3em;
+    padding: 10px;
+
+}
+.totalCost-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+#totalCostCalc {
+    background-color: white;
+    color: black;
+    border: 1px solid #9A9A9A;
+    padding: 10px 25px;
+    font-size: 18px;
+    border-radius: 40px;
+} 
+.totalOutput-container {
+    padding-top: 3em;
+    display: flex;
+    justify-content: center;
+}
+.deleteButton {
+    border: none;
+    background-color: white;
+    font-size: 20px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-left: 18px;
+    color: black;
+}
+.deleteButton::after {
+    content: "x";
+}
+.product-container {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+}
+#deleteContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.value {
+    font-size: 30px;
+}
+
+
+#output {
+    padding: 10px;
+    margin-top: 2em;
+    margin-bottom: 20px;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 40px;
+    border: 1px solid #9A9A9A;
+}
+
+table {
+    width: 100%;
+    border: 1px #9A9A9A solid;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 10px;
+}
+
+.select_button {
+    background-color: white;
+    color: black;
+    border: 1px solid #9A9A9A;
+    padding: 4px 12px;
+    font-size: 15px;
+    border-radius: 10px;
+}
