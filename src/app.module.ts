@@ -18,7 +18,7 @@ import { join } from 'path';
     ssl: process.env.DATABASE_URL ? { rejectUnauthorized: false } : false,
     }), JewelryModule,
     ServeStaticModule.forRoot({
-      rootPath: join(process.env.DATABASE_URL ? '' : __dirname, process.env.DATABASE_URL ? '../client' : '../client'),
+      rootPath: join(__dirname, '../client'),
       serveRoot: '',
       exclude: ['/jewelry*']
     })],
