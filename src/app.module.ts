@@ -15,7 +15,7 @@ import { join } from 'path';
     database: process.env.POSTGRES_DATABASE || 'mcjewelry',
     entities: [Jewelry],
     synchronize: true,
-    ssl: process.env.DATABASE_URL ? true: false
+    ssl: process.env.DATABASE_URL ? { rejectUnauthorized: false } : false,
     }), JewelryModule,
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'client'),
