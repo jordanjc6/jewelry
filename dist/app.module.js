@@ -29,7 +29,7 @@ AppModule = __decorate([
                 ssl: process.env.DATABASE_URL ? { rejectUnauthorized: false } : false,
             }), jewelry_module_1.JewelryModule,
             serve_static_1.ServeStaticModule.forRoot({
-                rootPath: path_1.join(__dirname, '..', 'client'),
+                rootPath: path_1.join(__dirname, '..', process.env.DATABASE_URL ? './jewelry/client' : 'client'),
                 serveRoot: '',
                 exclude: ['/jewelry*']
             })],
