@@ -19,11 +19,11 @@ AppModule = __decorate([
     common_1.Module({
         imports: [typeorm_1.TypeOrmModule.forRoot({
                 type: 'postgres',
-                host: 'ec2-184-73-198-174.compute-1.amazonaws.com',
+                host: process.env.POSTGRES_HOST || 'localhost',
                 port: 5432,
-                username: 'kyxchwnubzztkw',
-                password: '3debcefe3a17b1cc886b8a53ed4f38d0581dd8140b984b1168fb5d2f03d21dd6',
-                database: 'd3nfjc2luf98tf',
+                username: process.env.POSTGRES_USERNAME || 'postgres',
+                password: process.env.POSTGRES_PASSWORD || 'Jmilli0n!',
+                database: process.env.POSTGRES_DATABASE || 'mcjewelry',
                 entities: [jewelry_entity_1.Jewelry],
                 synchronize: true,
             }), jewelry_module_1.JewelryModule,
