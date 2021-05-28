@@ -26,7 +26,7 @@ AppModule = __decorate([
                 database: process.env.POSTGRES_DATABASE || 'mcjewelry',
                 entities: [jewelry_entity_1.Jewelry],
                 synchronize: true,
-                ssl: true
+                ssl: process.env.DATABASE_URL ? true : false
             }), jewelry_module_1.JewelryModule,
             serve_static_1.ServeStaticModule.forRoot({
                 rootPath: path_1.join(__dirname, '..', 'client'),
