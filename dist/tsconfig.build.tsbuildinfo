@@ -3127,7 +3127,7 @@
         "affectsGlobalScope": false
       },
       "../src/app.module.ts": {
-        "version": "ef3573bd0b7ba30507cdfde7efee153ddcee188241f29187db16c4abf2024c4c",
+        "version": "7710829f2e95aea92ca499707ed88c1600b15dbc9927b01191431b7b7b0ba773",
         "signature": "9fc7f7b6ad854404973b8cba8e6d883f758237991968e9a3965d716d46f1da88",
         "affectsGlobalScope": false
       },
