@@ -86,9 +86,9 @@ function search() {
     let url = '';
 
     if(!inputField1.value.trim() && !inputField2.value.trim() && !inputField3.value.trim()) {
-        url = process.env.DATABASE_URL ? 'https://mcjewelry.herokuapp.com/jewelry' : 'http://localhost:3000/jewelry';
+        url = 'https://mcjewelry.herokuapp.com/jewelry' || 'http://localhost:3000/jewelry';
     } else {
-        url = process.env.DATABASE_URL ? `https://mcjewelry.herokuapp.com/jewelry/${material}/${fineness}/${size}` :  `http://localhost:3000/jewelry/${material}/${fineness}/${size}`;
+        url = `https://mcjewelry.herokuapp.com/jewelry/${material}/${fineness}/${size}` ||  `http://localhost:3000/jewelry/${material}/${fineness}/${size}`;
     }
 
     fetch(url)
