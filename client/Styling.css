@@ -13,8 +13,9 @@ body {
     height: 100vh;
 }
 .titlepage {
+    padding-top: 10px;
     text-align: center;
-    font-size: 3em;
+    font-size: 2em;
 }
 .dropDown {
     margin-top: 20px;
@@ -73,6 +74,7 @@ body {
     color: black; 
     padding: 15px;
     font-size: 18px;
+    border-radius: 40px;
 }
 
 .buttonContainer {
@@ -87,6 +89,12 @@ body {
     padding: 10px 25px;
     font-size: 18px;
     border-radius: 40px;
+    cursor: pointer;
+}
+#addToCalc:hover {
+    background-color: black;
+    color: white;
+    transition: ease-in-out 0.1s;
 }
 .searchContainer {
     display: flex;
@@ -106,6 +114,12 @@ body {
     padding: 16px 60px;
     font-size: 18px;
     border-radius: 40px;
+    cursor: pointer;
+}
+#searchItem:hover {
+    background-color: black;
+    color: white;
+    transition: ease-in-out 0.1s;
 }
 
 .TheCalc {
@@ -135,7 +149,14 @@ body {
     padding: 10px 25px;
     font-size: 18px;
     border-radius: 40px;
+    cursor: pointer;
 } 
+#totalCostCalc:hover {
+    background-color: black;
+    color: white;
+    transition: ease-in-out 0.1s;
+}
+
 .totalOutput-container {
     padding-top: 3em;
     display: flex;
@@ -178,11 +199,12 @@ body {
     text-align: center;
     border-radius: 40px;
     border: 1px solid #9A9A9A;
+    width: 70%;
 }
 
 table {
     width: 100%;
-    border: 1px #9A9A9A solid;
+    border: 1px #9A9A9A solid; 
     border-collapse: collapse;
 }
 
@@ -197,4 +219,38 @@ td {
     padding: 4px 12px;
     font-size: 15px;
     border-radius: 10px;
+    cursor: pointer;
+}
+.select_button:hover {
+    background-color: black;
+    color: white;
+    transition: ease-in-out 0.1s;
+}
+
+@media (max-width: 375px) {
+    table thead {
+          display: none;
+    } 
+    table td {
+        display: flex;
+    } 
+    .headings {
+        padding: 0;
+    }
+    .item_name {
+        font-weight: bolder;
+        text-align: center;
+    }
+    .item_price {
+        display: flex;
+        justify-content: center;
+        font-size: 1.5em;
+    }
+    .item_select {
+        border-bottom: 1px solid #9A9A9A;
+        display: flex;
+        justify-content: center;
+        margin-top: 0px;
+        padding-bottom: 30px;
+    }
 }

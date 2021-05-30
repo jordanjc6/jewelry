@@ -14,6 +14,8 @@ let jewelryDisplay = document.getElementById('search_results');
 let reduction = 0;
 let price = 0;
 let table;
+let defaultText = document.getElementById('defaultText');
+let w = window.innerWidth;
 
 //Calculates cost for x quantity of product y
 function calculate(event) {
@@ -124,6 +126,16 @@ function displayResults(data) {
         button.classList.add('select_button');
 
         item_select.appendChild(button);
+
+        item_name.classList.add('item_name');
+        item_select.classList.add('item_select');
+        item_price.classList.add('item_price');
+
+        if (w < 376) {
+            item_currency.innerHTML = '';
+            item_price.innerHTML = '$' + item.unitprice.toFixed(2) + ' ' + item.currency;
+
+        }
     });
 }
 
@@ -136,10 +148,23 @@ function createTable() {
     let currency_heading = headings.insertCell(2);
     let select_heading = headings.insertCell(3);
 
+    product_heading.classList.add('headings')
+    unitprice_heading.classList.add('headings')
+    currency_heading.classList.add('headings')
+    select_heading.classList.add('headings')
+
     product_heading.innerHTML = '<b>Product</b>';
     unitprice_heading.innerHTML = '<b>Unit Price</b>';
     currency_heading.innerHTML = '<b>Currency</b>';
     select_heading.innerHTML = '<b>Select</b>';
 
     jewelryDisplay.appendChild(table);
+
+    if (w < 376) {
+        product_heading.innerHTML = '';
+        unitprice_heading.innerHTML = '';
+        currency_heading.innerHTML = '';
+        select_heading.innerHTML = '';
+    } 
+    console.log('window width = ' + w)
 }
