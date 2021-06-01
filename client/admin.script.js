@@ -1,6 +1,6 @@
 //Verify password
 let user_input = prompt('Enter admin password: ');
-let url = 'http://localhost:3000/jewelry/admin';
+let url = 'https://mcjewelry.herokuapp.com/jewelry/admin' || 'http://localhost:3000/jewelry/admin';
 let data = { input: user_input };
 
 fetch(url, {
@@ -24,7 +24,7 @@ function handleResponse(data) {
 let w = window.innerWidth;
 let table;
 
-fetch('http://localhost:3000/jewelry')
+fetch('https://mcjewelry.herokuapp.com/jewelry' || 'http://localhost:3000/jewelry')
 .then(response => response.json())
 .then(displayResults)
 .catch(function(error) {
@@ -139,7 +139,7 @@ function createItem() {
         currency: document.getElementById('input_currency').value
     }
 
-    fetch(`http://localhost:3000/jewelry/`, {
+    fetch('https://mcjewelry.herokuapp.com'  || `http://localhost:3000/jewelry/`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -179,7 +179,7 @@ function updateItem(event) {
         currency: currency
     }
 
-    fetch(`http://localhost:3000/jewelry/update/${item_id}`, {
+    fetch(`https://mcjewelry.herokuapp.com/jewelry/update/${item_id}` || `http://localhost:3000/jewelry/update/${item_id}`, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json'
@@ -200,7 +200,7 @@ function updateItem(event) {
 function deleteItem(event) {
     let item_id = event.target.value;
 
-    fetch(`http://localhost:3000/jewelry/delete/${item_id}`, {
+    fetch(`https://mcjewelry.herokuapp.com/jewelry/delete/${item_id}` || `http://localhost:3000/jewelry/delete/${item_id}`, {
         method: 'DELETE',
     })
     .then((response) => {
