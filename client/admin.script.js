@@ -139,7 +139,7 @@ function createItem() {
         currency: document.getElementById('input_currency').value
     }
 
-    fetch('https://mcjewelry.herokuapp.com'  || `http://localhost:3000/jewelry/`, {
+    fetch('https://mcjewelry.herokuapp.com/jewelry/'  || `http://localhost:3000/jewelry/`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
