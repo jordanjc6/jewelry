@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Rokkitt', serif;
+}
+body {
+    line-height: 1.3;
+    background-attachment: fixed;
+    background-color: white;
+    color: black;
+    font-family: 'Rokkitt', serif;
+    height: 100vh;
+}
+.titlepage {
+    padding-top: 10px;
+    text-align: center;
+    font-size: 2em;
+}
+
+#admin_btn {
+    background-color: white;
+    color: black;
+    border: 1px solid #9A9A9A;
+    padding: 4px 12px;
+    font-size: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#admin_btn:hover {
+    background-color: black;
+    color: white;
+    transition: ease-in-out 0.1s;
+}
+
+#search_results {
+    margin: 25px;
+    padding-bottom: 25px;
+}
+
+table {
+    width: 100%;
+    border: 1px #9A9A9A solid; 
+    border-collapse: collapse;
+}
+
+tr {
+    font-size: 18px;
+}
+
+td {
+    padding: 10px;
+}
+
+td input {
+    font-size: 16px;
+    width: 100%;
+}
+
+.form_btn {
+    background-color: white;
+    color: black;
+    border: 1px solid #9A9A9A;
+    padding: 4px 12px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.form_btn:hover {
+    background-color: black;
+    color: white;
+    transition: ease-in-out 0.1s;
+}
+
+.jewel_form {
+    margin: 25px;
+    padding: 12px;
+    border: 1px solid #9A9A9A;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    text-align: center;
+}
+
+.jewel_form input {
+    padding: 4px;
+    font-size: 16px;
+    width: 85%;
+    margin: 10px auto;
+}
+
+.create_btn {
+    width: 33%;
+    margin: 10px auto;
+    padding-top: 6px;
+}
+
+@media (max-width: 375px) {
+    table thead {
+        display: none;
+    } 
+    table td {
+        display: flex;
+    } 
+    .headings {
+        padding: 0;
+    }
+    .item_name {
+        font-weight: bolder;
+        text-align: center;
+    }
+    .item_price {
+        display: flex;
+        justify-content: center;
+        font-size: 1.5em;
+    }
+}

@@ -227,6 +227,22 @@ td {
     transition: ease-in-out 0.1s;
 }
 
+#admin_btn {
+    background-color: white;
+    color: black;
+    border: 1px solid #9A9A9A;
+    padding: 4px 12px;
+    font-size: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#admin_btn:hover {
+    background-color: black;
+    color: white;
+    transition: ease-in-out 0.1s;
+}
+
 @media (max-width: 375px) {
     table thead {
           display: none;

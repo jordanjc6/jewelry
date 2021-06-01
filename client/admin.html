@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" type="text/css" href = "./admin.style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <title>Marilyn's Creations - Inventory</title>
+</head>
+<body>
+
+<section class = "title"> 
+    <div class ="titlepage">
+        <h1>Marilyn's Creations - Inventory</h1>
+        <button id="admin_btn" onclick="location.href='./index.html'">Home</button>
+    </div>
+</section>
+<div class="jewel_form">
+    <h2>Add Item</h2>
+    <input id="input_provider" type="text" placeholder="Provider">
+    <input id="input_invoice" type="text" placeholder="Invoice">
+    <input id="input_product" type="text" placeholder="Product">
+    <input id="input_sku" type="text" placeholder="Sku">
+    <input id="input_unitprice" type="number" step=".01" placeholder="Unit Price">
+    <input id="input_currency" type="text" placeholder="Currency">
+
+    <button class="form_btn create_btn" onclick="createItem()">Create</button>
+</div>
+<div id="search_results"></div>
+<script src = "./admin.script.js"></script>
+
+</body>
+</html>

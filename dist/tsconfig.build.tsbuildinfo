@@ -2887,8 +2887,8 @@
         "affectsGlobalScope": false
       },
       "../src/jewelry/jewelry.controller.ts": {
-        "version": "3092c0a401840a4afbb0dd85ba33e90be0d21eaeeea278a3b0b75a842ac94544",
-        "signature": "873a5c16420be77dc564e2517d0178537811d9aba71fb60fbd1eb93232ae790e",
+        "version": "50b4ef214641fe6d5987b212a4812202a6e1b4055dd06fa8293bf7d12cd2ebe4",
+        "signature": "26659a7d497ef4b7afaa6a65554327a291388930f5c1c1b8160241c769b31fbf",
         "affectsGlobalScope": false
       },
       "../src/jewelry/jewelry.module.ts": {

@@ -5,6 +5,7 @@ export declare class JewelryController {
     private readonly jewelryService;
     constructor(jewelryService: JewelryService);
     create(jewel: Jewel): Promise<Jewelry[]>;
+    async(body: any): boolean;
     findAll(): Promise<Jewelry[]>;
     query(material: string, fineness: string, size: string): Promise<Jewelry[]>;
     update(id: string, jewel: Jewel): Promise<any>;

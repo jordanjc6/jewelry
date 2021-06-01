@@ -2,6 +2,7 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { JewelryService } from './jewelry.service';
 import { Jewelry } from './jewelry.entity';
 import { Jewel } from './jewel.model';
+let password = 'Marilyn*15';
 
 @Controller('jewelry')
 export class JewelryController {
@@ -10,6 +11,11 @@ export class JewelryController {
   @Post()
   async create(@Body() jewel: Jewel): Promise<Jewelry[]> {
     return await this.jewelryService.create(jewel);
+  }
+
+  @Post('admin')
+  async (@Body() body): boolean {
+    return body.input === password;
   }
 
   @Get()

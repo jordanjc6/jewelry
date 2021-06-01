@@ -15,12 +15,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.JewelryController = void 0;
 const common_1 = require("@nestjs/common");
 const jewelry_service_1 = require("./jewelry.service");
+let password = 'Marilyn*15';
 let JewelryController = class JewelryController {
     constructor(jewelryService) {
         this.jewelryService = jewelryService;
     }
     async create(jewel) {
         return await this.jewelryService.create(jewel);
+    }
+    async(body) {
+        return body.input === password;
     }
     async findAll() {
         return await this.jewelryService.findAll();
@@ -69,6 +73,13 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], JewelryController.prototype, "create", null);
+__decorate([
+    common_1.Post('admin'),
+    __param(0, common_1.Body()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Boolean)
+], JewelryController.prototype, "async", null);
 __decorate([
     common_1.Get(),
     __metadata("design:type", Function),
