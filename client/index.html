@@ -39,10 +39,10 @@
    <div id="search_results"></div>
     <div class = "item item-2">
         <h1>Quantity</h1>
-        <input id="inputFieldSecond" type="number" value=1 placeholder = "I.e. 5 beads" onchange="recalculate()">
+        <input id="inputFieldSecond" type="number" value=1 placeholder = "I.e. 5 beads" onchange="recalculate(event)">
     </div>
     <div class = "cost">
-        <input id = "theCost" type="number" readonly></input>
+        <input id = "theCost" type="text" readonly></input>
     </div>
 </section>
 
@@ -65,7 +65,7 @@
     <button id="totalCostCalc">Calculate</button>
 </section>
 <div class = "totalOutput-container">
-    <input id ="output" type="number" readonly></input>
+    <input id ="output" type="text" readonly></input>
 </div>
 <script src = "./Inventory.js"></script>
 

@@ -16,31 +16,36 @@ let price = 0;
 let table;
 let defaultText = document.getElementById('defaultText');
 let w = window.innerWidth;
+const USD_EXCHANGE_RATE = 1.2;
 
 //Calculates cost for x quantity of product y
 function calculate(event) {
+    let currency = event.target.classList[0];
     price = event.target.value;
-    theCost.innerHTML = (price * quantity.value).toFixed(2);
-    theCost.value = (price * quantity.value).toFixed(2);
+    theCost.value = (price * quantity.value).toFixed(2) + ' ' + currency;
+    document.getElementById('inputFieldSecond').className = currency;
 }
 
 //Calculates cost for x quantity of product y
-function recalculate() {
-    theCost.innerHTML = (price * quantity.value).toFixed(2);
-    theCost.value = (price * quantity.value).toFixed(2);
+function recalculate(event) {
+    theCost.value = (price * quantity.value).toFixed(2) + ' ' + event.target.className;
 }
 
 //Appends the calculated cost to the list of materials that will be included in final cost calculation
 function addProduct() {
     if(!theCost.value) { return; }
+
+    let cost = theCost.value.split(' ')[0];
+    console.log(cost);
+    let currency = theCost.value.split(' ')[1];
     
-    productCost.push(theCost.valueAsNumber);
+    productCost.push([Number(cost), currency]);
     var product = document.createElement('p');
     var deleteProduct = document.createElement('button');
-    deleteProduct.value = theCost.value;
+    deleteProduct.value = cost + ' ' + currency;
     deleteProduct.classList.add('deleteButton');
     product.classList.add('value')
-    product.innerText = theCost.value;
+    product.innerText = cost + ' ' + currency;
     toCalcContainer.appendChild(product);
     deleteContainer.appendChild(deleteProduct);
 
@@ -55,18 +60,27 @@ function addProduct() {
     deleteProduct.addEventListener('click', (event) => {
         toCalcContainer.removeChild(product)
         deleteContainer.removeChild(deleteProduct)
-        reduction += Number(event.target.value);
+        let reduce = Number(event.target.value.split(' ')[0]);
+        if(event.target.value.split(' ')[1] === 'USD') { reduce *= USD_EXCHANGE_RATE; }
+        reduction += reduce;
 
         console.log(reduction);  
     });
 }
 
 //Calculates total cost
-totalCostCalc.addEventListener('click', () => {
+totalCostCalc.addEventListener('click', () => { 
+    let yourFinalPrice = 0;
+
+    for(let i = 0; i < productCost.length; i++) {
+        let item = productCost[i][0];
+        if(productCost[i][1] === 'USD') { item *= USD_EXCHANGE_RATE; }
+
+        yourFinalPrice += item;
+    }
     
-    const yourFinalPrice = (accumulator, currentValue) => accumulator + currentValue;
-    let unrounded = productCost.reduce(yourFinalPrice) - reduction;
-    totalCost.value = unrounded.toFixed(2);
+    yourFinalPrice -= reduction;
+    totalCost.value = yourFinalPrice.toFixed(2).toString() + ' ' + 'CAD';
 })
 
 //Will send query to server and receive jewelry array
@@ -121,6 +135,7 @@ function displayResults(data) {
 
         let button = document.createElement('button');
         button.innerHTML = 'Select';
+        button.className = item.currency;
         button.value = item.unitprice;
         button.addEventListener('click', calculate);
         button.classList.add('select_button');
